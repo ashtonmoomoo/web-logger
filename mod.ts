@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.152.0/http/server.ts";
 import { handlePost } from "./handlers/post.ts";
+import { handleGet } from "./handlers/get.ts";
 import { PORT } from "./config.ts";
 
 export const badRequest = (message: string) => {
@@ -19,7 +20,7 @@ const handler = async (request: Request): Promise<Response> => {
 
   switch (method) {
     case "GET":
-      throw new Error("not implemented");
+      return handleGet(id);
 
     case "POST":
       return await handlePost(id, request);

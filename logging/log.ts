@@ -1,4 +1,4 @@
-interface Entry {
+export interface Entry {
   created: Date;
   content: string;
 }
@@ -15,8 +15,12 @@ const writeLog = (toWrite: string) => {
   Deno.writeTextFileSync("log.json", toWrite);
 };
 
+export const getLogJSON = (): Logs => {
+  return JSON.parse(readLog());
+};
+
 export const createLog = (id: string, content: string) => {
-  const log: Logs = JSON.parse(readLog());
+  const log = getLogJSON();
 
   if (!log[id]) {
     log[id] = [];
