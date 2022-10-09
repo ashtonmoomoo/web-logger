@@ -1,4 +1,7 @@
 {
   "name": "web-logger",
-  "repository": "https://github.com/ashtonmoomoo/web-logger.git"
+  "repository": "https://github.com/ashtonmoomoo/web-logger.git",
+  "devDependencies": {
+    "@types/node": "^18.8.3"
+  }
 }
