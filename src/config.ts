@@ -1,3 +1,6 @@
-export const MAX_CONTENT_LENGTH =
-  Number(Deno.env.get("MAX_CONTENT_LENGTH")) || 2500;
-export const PORT = Number(Deno.env.get("PORT")) || 3000;
+import { getEnvVar } from "./utils/environment";
+
+export const MAX_CONTENT_LENGTH = Number(
+  getEnvVar("MAX_CONTENT_LENGTH", "2500")
+);
+export const PORT = Number(getEnvVar("PORT", "3000"));
