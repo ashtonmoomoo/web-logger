@@ -1,4 +1,6 @@
-import { badRequest } from "../mod.ts";
+import type { Handler } from "../types/index.ts";
+
+import { badRequest, getIdFromRequest } from "./handler.ts";
 import { Entry, getLogJSON } from "../logging/log.ts";
 
 const getMostRecentEntry = (entries: Entry[]) => {
@@ -11,7 +13,8 @@ const getMostRecentEntry = (entries: Entry[]) => {
   return entriesCopy[0];
 };
 
-export const handleGet = (id: string): Response => {
+export const handleGet: Handler = (request) => {
+  const id = getIdFromRequest(request);
   const log = getLogJSON();
 
   if (!log[id]) {
