@@ -1,7 +1,7 @@
-import type { Handler } from "../types/index.ts";
+import type { Handler } from "../types/index";
 
-import { badRequest, getIdFromRequest } from "./handler.ts";
-import { Entry, getLogJSON } from "../logging/log.ts";
+import { badRequest, getIdFromRequest } from "./handler";
+import { Entry, getLogJSON } from "../logging/log";
 
 const getMostRecentEntry = (entries: Entry[]) => {
   const entriesCopy = [...entries];
