@@ -1,3 +1,5 @@
+import { readFileSync, writeFileSync } from "fs";
+
 export interface Entry {
   created: Date;
   content: string;
@@ -8,11 +10,11 @@ interface Logs {
 }
 
 const readLog = () => {
-  return Deno.readTextFileSync("log.json");
+  return readFileSync("log.json", "utf-8");
 };
 
 const writeLog = (toWrite: string) => {
-  Deno.writeTextFileSync("log.json", toWrite);
+  writeFileSync("log.json", toWrite);
 };
 
 export const getLogJSON = (): Logs => {
