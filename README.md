@@ -38,3 +38,15 @@ At the moment, it is only supported getting your most recent log message. I have
 
 ## Considerations
 The log messages are stored in a file on the server. At the moment, they will remain until the server is restarted (which, knowing me, happens reasonably often :P). I plan to add the ability for a user to delete their logs, as well as automatically deleting old logs (I'm thinking logs last ~1 hour).
+
+## Getting started
+To develop locally, make sure you have a [Deno runtime installed](https://deno.land/manual@v1.26.1/getting_started/installation). Then, from the root directory of the project, run
+```bash
+deno run --allow-net --allow-env --allow-read --allow-write mod.ts
+```
+This will start a dev server on localhost:3000. You can change the port by prefixing the above command with PORT=some_port.
+
+Why are the flags necessary?
+- `--allow-net` is for the app to respond to and send requests over the network
+- `--allow-env` is to read the `PORT` variable from the program's environment
+- `--allow-read` and `--allow-write` is to enable the reading and writing of a local log file.
