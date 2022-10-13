@@ -2,6 +2,7 @@ import type { Handler } from "../../types/index.ts";
 
 import { handlePost } from "./post.ts";
 import { handleGet } from "./get.ts";
+import { handleDelete } from "./delete.ts";
 
 export const badRequest = (message: string) => {
   return new Response(message, {
@@ -27,6 +28,7 @@ export const getIdFromRequest = (request: Request) => {
 const methodHandlers: { [key: string]: Handler } = {
   GET: handleGet,
   POST: handlePost,
+  DELETE: handleDelete,
 };
 
 export const handler: Handler = (request) => {

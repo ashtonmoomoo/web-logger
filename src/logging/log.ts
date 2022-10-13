@@ -33,3 +33,15 @@ export const createLog = (id: string, content: string) => {
 
   writeLog(JSON.stringify(log));
 };
+
+export const deleteLogs = (id: string) => {
+  const log = getLogJSON();
+
+  if (!log[id]) {
+    return;
+  }
+
+  log[id] = [];
+
+  writeLog(JSON.stringify(log));
+};
