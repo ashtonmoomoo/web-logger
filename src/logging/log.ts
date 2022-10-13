@@ -1,11 +1,4 @@
-export interface Entry {
-  created: Date;
-  content: string;
-}
-
-interface Logs {
-  [id: string]: Entry[];
-}
+import { Logs } from "../types/index.ts";
 
 const readLog = () => {
   return Deno.readTextFileSync("log.json");
