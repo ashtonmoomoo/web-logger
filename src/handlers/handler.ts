@@ -10,6 +10,12 @@ export const badRequest = (message: string) => {
   });
 };
 
+export const notFound = (message?: string) => {
+  return new Response(message || "Resource not found", {
+    status: 404,
+  });
+};
+
 const serverError = () => {
   return new Response("Internal server error.", {
     status: 500,

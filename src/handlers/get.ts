@@ -1,6 +1,6 @@
 import type { Handler } from "../../types/index.ts";
 
-import { badRequest, getIdFromRequest } from "./handler.ts";
+import { notFound, getIdFromRequest } from "./handler.ts";
 import { Entry, getLogJSON } from "../logging/log.ts";
 
 const getMostRecentEntry = (entries: Entry[]) => {
@@ -18,7 +18,7 @@ export const handleGet: Handler = (request) => {
   const log = getLogJSON();
 
   if (!log[id]) {
-    return badRequest(`No logs exist for id ${id}`);
+    return notFound(`Logs for ${id} weren't able to be found.`);
   }
 
   const mostRecentEntry = getMostRecentEntry(log[id]);
