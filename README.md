@@ -34,10 +34,12 @@ which gives back
 }
 ```
 
+You can delete all your log messages by performing a `DELETE` request on your endpoint.
+
 At the moment, it is only supported getting your most recent log message. I have plans to extend this.
 
 ## Considerations
-The log messages are stored in a file on the server. At the moment, they will remain until the server is restarted (which, knowing me, happens reasonably often :P). I plan to add the ability for a user to delete their logs, as well as automatically deleting old logs (I'm thinking logs last ~1 hour).
+The log messages are stored in a file on the server. At the moment, they will remain until the server is restarted (which, knowing me, happens reasonably often :P).
 
 ## Getting started
 To develop locally, make sure you have a [Deno runtime installed](https://deno.land/manual@v1.26.1/getting_started/installation). Then, from the root directory of the project, run

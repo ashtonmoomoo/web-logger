@@ -1,8 +1,8 @@
-import type { Handler } from "../types/index.ts";
+import type { Handler } from "../../types/index.ts";
 
 import { badRequest, getIdFromRequest } from "./handler.ts";
 import { createLog } from "../logging/log.ts";
-import { MAX_CONTENT_LENGTH } from "../config.ts";
+import { MAX_CONTENT_LENGTH } from "../../config.ts";
 
 interface ExpectedBody {
   content: string;
