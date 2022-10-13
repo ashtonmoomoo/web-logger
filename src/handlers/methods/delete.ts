@@ -1,7 +1,8 @@
 import type { Handler } from "../../types/index.ts";
 
-import { badRequest, getIdFromRequest } from "./handler.ts";
-import { deleteLogs } from "../logging/log.ts";
+import { deleteLogs } from "../../logging/log.ts";
+import { badRequest } from "../utils/errorResponses.ts";
+import { getIdFromRequest } from "../utils/index.ts";
 
 export const handleDelete: Handler = (request) => {
   const id = getIdFromRequest(request);
