@@ -1,4 +1,4 @@
-import type { Handler } from "../types/index.ts";
+import type { Handler } from "../../types/index.ts";
 
 import { badRequest, getIdFromRequest } from "./handler.ts";
 import { Entry, getLogJSON } from "../logging/log.ts";

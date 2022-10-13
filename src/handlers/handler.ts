@@ -1,7 +1,7 @@
-import type { Handler } from "../types/index.ts";
+import type { Handler } from "../../types/index.ts";
 
-import { handlePost } from "../handlers/post.ts";
-import { handleGet } from "../handlers/get.ts";
+import { handlePost } from "./post.ts";
+import { handleGet } from "./get.ts";
 
 export const badRequest = (message: string) => {
   return new Response(message, {
