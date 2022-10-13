@@ -5,13 +5,11 @@ import { getIdFromRequest } from "../utils/index.ts";
 import { notFound } from "../utils/errorResponses.ts";
 
 const getMostRecentEntry = (entries: Entry[]) => {
-  const entriesCopy = [...entries];
-
-  entriesCopy.sort((a, b) => {
+  entries.sort((a, b) => {
     return Number(new Date(b.created)) - Number(new Date(a.created));
   });
 
-  return entriesCopy[0];
+  return entries[0];
 };
 
 export const handleGet: Handler = (request) => {
