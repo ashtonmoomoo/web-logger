@@ -1,6 +1,6 @@
 import type { Handler } from "../../types/index.ts";
 
-import { MAX_CONTENT_LENGTH } from "../../../config.ts";
+import { MAX_CONTENT_LENGTH } from "../../config.ts";
 import { createLog } from "../../logging/log.ts";
 import { badRequest } from "../utils/errorResponses.ts";
 import { getIdFromRequest } from "../utils/index.ts";
