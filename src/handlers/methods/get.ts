@@ -1,6 +1,6 @@
-import type { Handler } from "../../types/index.ts";
+import type { Entry, Handler } from "../../types/index.ts";
 
-import { Entry, getLogJSON } from "../../logging/log.ts";
+import { getLogJSON } from "../../logging/log.ts";
 import { getIdFromRequest } from "../utils/index.ts";
 import { notFound } from "../utils/errorResponses.ts";
 
